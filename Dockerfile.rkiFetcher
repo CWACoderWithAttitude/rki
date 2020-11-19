@@ -1,0 +1,8 @@
+FROM centos:8
+
+RUN yum -y update && mkdir -p /app/csv && mkdir -p /app/data
+
+WORKDIR /app
+ADD rki_fetcher.sh .
+#CMD ["/bin/bash"]
+CMD ["./rki_fetcher.sh"]
