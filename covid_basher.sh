@@ -26,7 +26,7 @@ for file in $(ls data/2020-*api*.json); do
   #   lets convert those to something human readable
   ts1=$(cat $file | jq -rc '.lastUpdate')
   ts2=${ts1%???}
-  ts3=$(gdate -d@$ts2 +%F)
+  ts3=$(date -d@$ts2 +%F)
   filename="$export_path/export_api_$ts3.csv"
 
   # convert daily repo
